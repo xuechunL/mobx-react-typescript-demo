@@ -13,6 +13,8 @@
     "member-access": [true, "no-public"],
     "max-classes-per-file": [true, 5, "exclude-class-expressions"],
     "no-console": false,
+    "no-bitwise": false,
+    "no-increment-decrement": false,
     "semicolon": [true, "never"],
     "align": [true, "statements"],
     "import-name": false,
