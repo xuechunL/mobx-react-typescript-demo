@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { CounterContainer } from './containers'
+import Timer from './components/Timer'
 
 const renderDevTool = () => {
   console.log('node env', process.env.NODE_ENV)
@@ -14,6 +15,7 @@ export class App extends React.Component {
     return (
       <div>
         <CounterContainer />
+        <Timer />
         {renderDevTool()}
       </div>
     )
