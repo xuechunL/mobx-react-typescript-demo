@@ -9,7 +9,9 @@ const applicationStore = new ApplicationStore()
 // tslint:disable-next-line:no-shadowed-variable
 const renderApp = (root: Element, App: React.ComponentClass) => {
   ReactDOM.render((
-    <Provider store={applicationStore}><App /></Provider>
+    <Provider store={applicationStore}>
+      <App />
+    </Provider>
   ), root)
 }
 
