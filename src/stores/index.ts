@@ -1,1 +1,1 @@
-export { ApplicationStore } from './ApplicationStore'
+export { default as CounterStore } from './CounterStore'

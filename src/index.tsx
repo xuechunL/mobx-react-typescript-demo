@@ -2,14 +2,15 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 import { App } from './App'
-import { ApplicationStore } from './stores'
+import createStores from './stores/createStores'
 
-const applicationStore = new ApplicationStore()
+const appStores = createStores()
 
 // tslint:disable-next-line:no-shadowed-variable
 const renderApp = (root: Element, App: React.ComponentClass) => {
+  console.log('global stores', appStores)
   ReactDOM.render((
-    <Provider store={applicationStore}>
+    <Provider stores={appStores}>
       <App />
     </Provider>
   ), root)

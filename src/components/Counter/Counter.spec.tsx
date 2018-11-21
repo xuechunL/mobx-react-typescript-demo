@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { Home } from './Home'
+import { Counter } from './Counter'
 import { shallow } from 'enzyme'
 import { NumberDisplay, Button } from './styles'
 
 test('that counter is rendered', () => {
   const wrapper = shallow(
-    <Home
+    <Counter
       counter={1}
       increment={() => { console.log('increment') }}
       decrement={() => { console.log('decrement') }}
@@ -17,7 +17,7 @@ test('that counter is rendered', () => {
 test('that decrement is called when button decrement is clicked', () => {
   const decrementSpy = jest.fn()
   const wrapper = shallow(
-    <Home
+    <Counter
       counter={1}
       increment={() => { console.log('increment') }}
       decrement={decrementSpy}
@@ -31,7 +31,7 @@ test('that decrement is called when button decrement is clicked', () => {
 test('that increment is called when button increment is clicked', () => {
   const incrementSpy = jest.fn()
   const wrapper = shallow(
-    <Home
+    <Counter
       counter={1}
       increment={incrementSpy}
       decrement={() => { console.log('decrement') }}

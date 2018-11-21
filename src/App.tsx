@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { HomeContainer } from './containers'
+import { CounterContainer } from './containers'
 
 const renderDevTool = () => {
   console.log('node env', process.env.NODE_ENV)
@@ -13,7 +13,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <HomeContainer />
+        <CounterContainer />
         {renderDevTool()}
       </div>
     )
