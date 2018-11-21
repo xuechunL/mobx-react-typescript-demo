@@ -6,12 +6,19 @@ import { ApplicationStore } from './stores'
 
 const applicationStore = new ApplicationStore()
 
+// tslint:disable-next-line:no-shadowed-variable
+const renderApp = (root: Element, App: React.ComponentClass) => {
+  ReactDOM.render((
+    <Provider store={applicationStore}><App /></Provider>
+  ), root)
+}
+
+const root = document.getElementById('root')
+renderApp(root, App)
+
 if (module.hot) {
   module.hot.accept('./App', () => {
-    ReactDOM.render((
-      <Provider store={applicationStore}>
-        <App />
-      </Provider>
-    ), document.getElementById('root'))
+    const NewApp = require('./App').App
+    renderApp(root, NewApp)
   })
 }
