@@ -18,6 +18,7 @@ export default class TodoStore {
 
   subscribeServerToStore() {
     reaction(
+      // data function, return observable data - this.todos.map(todo => todo.toJS())
       () => this.toJS(),
       todos => fetch('/api/todos', {
         method: 'post',
@@ -30,6 +31,7 @@ export default class TodoStore {
 
   subscribeLocalstorageToStore() {
     reaction(
+      // data function, return observable data - this.todos.map(todo => todo.toJS())
       () => this.toJS(),
       todos => localStorage.setItem('mobx-react-todomvc-todos', todos as any),
     )
